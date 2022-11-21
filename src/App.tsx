@@ -1,10 +1,23 @@
-import React from 'react';
+import React from "react";
+import {FunctionComponent} from 'react';
+import Home from "./pages/Home/Home";
 
-function App() {
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom";
+import NotFound from "./pages/404/NotFound";
+
+const App: FunctionComponent = () => {
   return (
-    <div className="app">
-
-    </div>
+    <Router>
+        <Routes>
+            <Route path={'/'} element={<Home />} />
+            <Route path={'*'} element={<NotFound />} />
+        </Routes>
+    </Router>
   );
 }
 
