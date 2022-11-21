@@ -1,11 +1,13 @@
+import {FunctionComponent} from "react";
+import Header from '../../layouts/Header/Header';
+import Menu from "../../layouts/Menu/Menu";
 
-
-const Home = () => {
+const Home: FunctionComponent = () => {
     return (
         <>
-            <div className={'home'}>
-
-            </div>
+            <article className={'home'}>
+                <Header />
+            </article>
         </>
     )
 }

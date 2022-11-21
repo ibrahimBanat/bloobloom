@@ -1,0 +1,49 @@
+
+.wrapper {
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.navbar {
+    height: 100%;
+    width: 100%;
+}
+.navLinks {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+}
+.navLink {
+    flex: 0 0 12.5%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.navLink:not(:first-of-type) {
+    border-left: 1px solid black;
+}
+.navLinkMain {
+    flex: 0 0 75%;
+    width: 100%;
+    align-items: center;
+}
+.navLinkBox {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+.menuButton {
+    text-transform: uppercase;
+}
+header:hover ~ .aside{
+    transform: none;
+}
+.logo {
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+}

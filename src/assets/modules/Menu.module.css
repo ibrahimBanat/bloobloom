@@ -1,0 +1,12 @@
+
+.aside {
+    width: 35%;
+    height: 94vh;
+    position: absolute;
+    top: 6vh;
+    background-color: red;
+    z-index: 10;
+    border: 1px solid black;
+    border-top: none;
+    transform: translateX(-100%);
+}
