@@ -1,6 +1,6 @@
 import React from "react";
 import {FunctionComponent} from 'react';
-import Home from "./pages/Home/Home";
+import Home from "./layouts/Main/Layout";
 
 import {
     BrowserRouter as Router,
@@ -15,6 +15,7 @@ const App: FunctionComponent = () => {
     <Router>
         <Routes>
             <Route path={'/'} element={<Home />} />
+            <Route path={'/collections'}/>
             <Route path={'*'} element={<NotFound />} />
         </Routes>
     </Router>

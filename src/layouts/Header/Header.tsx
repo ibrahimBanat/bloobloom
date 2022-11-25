@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import styles from '../../assets/modules/Header.module.css';
-import Menu from '../../layouts/Menu/Menu';
+import {MenuContext} from "../../context/MenuContext";
 
 const Header = () => {
     return (
@@ -10,13 +10,24 @@ const Header = () => {
               <header className={styles.wrapper}>
                   <nav className={styles.navbar}>
                       <ul className={styles.navLinks}>
-                          <li className={styles.navLink}>
-                              <div className={styles.navLinkBox}>
-                            <span className={styles.menuButton} role={'button'}>
-                                Menu
-                            </span>
-                              </div>
-                          </li>
+                                <MenuContext.Consumer>
+                                    {({outer, setOuter}) => (
+                                        <li className={styles.navLink}
+                                            onMouseEnter={() => setOuter(true)}
+                                            onMouseLeave={() => setOuter(false)}
+                                            onFocus={() => setOuter(true)}
+                                        >
+                                            <div className={styles.navLinkBox}>
+                                                <div>
+                                            <span className={styles.menuButton} role={'button'}
+                                            >
+                                                Menu
+                                            </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    )}
+                                </MenuContext.Consumer>
                           <li className={`${styles.navLink} ${styles.navLinkMain}`}>
                               <div>
                                   <Link to={'/'} role={'button'}>
