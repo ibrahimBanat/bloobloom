@@ -5,7 +5,6 @@ export const MenuContext = React.createContext({
    setOuter: (outer: boolean) => {},
    inner: false,
    setInner: (inner: boolean) => {},
-   category: '',
-   setCategory: (category: string) => {}
+   // category: 'spectacles',
+   // setCategory: (category: string) => {}
 });
-

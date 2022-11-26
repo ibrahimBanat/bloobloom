@@ -1,8 +1,27 @@
-import {FunctionComponent} from "react";
+import React, {FunctionComponent, useEffect, useState} from "react";
 import styles from '../../assets/modules/Menu.module.css';
 import {MenuContext} from "../../context/MenuContext";
+import {useFetch} from "../../hooks/fetch";
+import {useInfiniteQuery} from "react-query";
 
 const Menu:FunctionComponent = () => {
+    const mainUrl = 'https://staging-api.bloobloom.com/user/v1/sales_channels/website/collections/'
+    const [page, setPage] = useState(1);
+    const [category, setCategory] = useState('spectacles');
+    // const [category, setCategory] = useState(MenuContext.Consumer.);
+    // const result = useFetch('url', `${category}-${gender}`);
+    const [gender, setGender] = useState('women');
+    const url = mainUrl + `${category}-${gender}` + '/glasses';
+    // const result = useFetch(url, `${category}-${gender}`);
+    // console.log(result)
+    const HandleClick = (category: string, gender: string) => {
+        // console.log(url)
+    }
+
+    useEffect(() => {
+
+    }, [category]);
+
     return (
       <>
         <MenuContext.Consumer>
@@ -10,8 +29,6 @@ const Menu:FunctionComponent = () => {
                   outer,
                   setOuter, inner,
                   setInner,
-                  category,
-                  setCategory
               }) => (
                 <>
                     <aside className={`${styles.aside} ${outer? styles.show : ''}`} tabIndex={-1}
@@ -59,7 +76,9 @@ const Menu:FunctionComponent = () => {
                                 <span></span>
                                 <span className={styles.menuItemLink}>go back</span>
                             </div>
-                            <div className={styles.menuItem}>
+                            <div className={styles.menuItem}
+                                onClick={() => HandleClick(category, 'men')}
+                            >
                                 <span className={styles.menuItemLink}>men-{category}</span>
                                 <span></span>
                             </div>
