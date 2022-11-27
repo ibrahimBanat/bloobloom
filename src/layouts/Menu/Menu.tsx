@@ -1,26 +1,11 @@
 import React, {FunctionComponent, useEffect, useState} from "react";
 import styles from '../../assets/modules/Menu.module.css';
 import {MenuContext} from "../../context/MenuContext";
-import {useFetch} from "../../hooks/fetch";
-import {useInfiniteQuery} from "react-query";
+import {Link} from "react-router-dom";
+
 
 const Menu:FunctionComponent = () => {
-    const mainUrl = 'https://staging-api.bloobloom.com/user/v1/sales_channels/website/collections/'
-    const [page, setPage] = useState(1);
     const [category, setCategory] = useState('spectacles');
-    // const [category, setCategory] = useState(MenuContext.Consumer.);
-    // const result = useFetch('url', `${category}-${gender}`);
-    const [gender, setGender] = useState('women');
-    const url = mainUrl + `${category}-${gender}` + '/glasses';
-    // const result = useFetch(url, `${category}-${gender}`);
-    // console.log(result)
-    const HandleClick = (category: string, gender: string) => {
-        // console.log(url)
-    }
-
-    useEffect(() => {
-
-    }, [category]);
 
     return (
       <>
@@ -77,13 +62,16 @@ const Menu:FunctionComponent = () => {
                                 <span className={styles.menuItemLink}>go back</span>
                             </div>
                             <div className={styles.menuItem}
-                                onClick={() => HandleClick(category, 'men')}
                             >
-                                <span className={styles.menuItemLink}>men-{category}</span>
+                                <Link to={`collections/${category}-men`}>
+                                    <span className={styles.menuItemLink}>men-{category}</span>
+                                </Link>
                                 <span></span>
                             </div>
                             <div className={styles.menuItem}>
-                                <span className={styles.menuItemLink}>women-{category}</span>
+                                <Link to={`collections/${category}-women`}>
+                                    <span className={styles.menuItemLink}>women-{category}</span>
+                                </Link>
                                 <span></span>
                             </div>
                         </article>

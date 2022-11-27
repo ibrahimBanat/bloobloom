@@ -1,0 +1,83 @@
+
+
+.header {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 2;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.glassImage {
+    width: 100%;
+    height: 100%;
+
+}
+.colors {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    z-index: 2;
+}
+.colorWrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+    border-bottom: none;
+}
+.colorWrapper:not(:last-of-type) {
+    border-right: none;
+}
+.colorWrapper:first-of-type, .colorWrapper:last-of-type {
+    border-left: none;
+    border-right: none;
+}
+.color {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: relative;
+}
+.color:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(52, 73, 94, 0.75);
+}
+.color:hover {
+    transform: scale(1.2);
+    opacity: .8;
+}
+.color:hover .color:before {
+    display: block;
+}
+.leftControl {
+    position: absolute;
+    height: calc(100% - 40px);
+    left: 0;
+    width: 15%;
+    top: 0;
+    cursor: w-resize;}
+.rightControl {
+    position: absolute;
+    height: calc(100% - 40px);
+    right: 0;
+    width: 15%;
+    top: 0;
+    cursor: e-resize;
+}
