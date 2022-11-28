@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bloobloom/static/css/main.4e0682cc.css",
+    "main.js": "/bloobloom/static/js/main.4555aff0.js",
+    "static/js/787.63c05b88.chunk.js": "/bloobloom/static/js/787.63c05b88.chunk.js",
+    "index.html": "/bloobloom/index.html",
+    "main.4e0682cc.css.map": "/bloobloom/static/css/main.4e0682cc.css.map",
+    "main.4555aff0.js.map": "/bloobloom/static/js/main.4555aff0.js.map",
+    "787.63c05b88.chunk.js.map": "/bloobloom/static/js/787.63c05b88.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e0682cc.css",
+    "static/js/main.4555aff0.js"
+  ]
+}
