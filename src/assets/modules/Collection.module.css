@@ -16,3 +16,63 @@
 .glass:not(:first-of-type) {
     border-left: none;
 }
+
+.filters {
+    border: 1px solid black;
+    border-top: none;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+.colors, .frames {
+    flex: 0 0 50%;
+    padding: 10px 20px;
+    justify-content: space-between;
+    display: flex;
+    gap: 20px;
+}
+.colors {
+    border-right: 1px solid black;
+}
+.filterOptions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.filtersMainHeading {
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox label {
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.checkbox input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+}
+.filterSubHeader {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+@media (max-width: 576px) {
+    .glass {
+        flex: 0 0 100%;
+    }
+}

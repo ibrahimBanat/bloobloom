@@ -47,3 +47,14 @@ header:hover ~ .aside{
     height: 50px;
     object-fit: contain;
 }
+.hideDesktop {
+    display: none;
+}
+@media (max-width: 576px) {
+    .hideDesktop {
+        display: initial;
+    }
+    .menuButtonText {
+        display: none;
+    }
+}

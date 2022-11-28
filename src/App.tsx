@@ -12,6 +12,7 @@ import Collection from "./pages/collection/Collection";
 import Header from "./layouts/Header/Header";
 import Menu from "./layouts/Menu/Menu";
 import {MenuContext} from "./context/MenuContext";
+import styles from './App.module.css';
 
 const App: FunctionComponent = () => {
     const queryClient: QueryClient = new QueryClient({
@@ -28,15 +29,23 @@ const App: FunctionComponent = () => {
         <Router>
             <QueryClientProvider client={queryClient}>
                 <MenuContext.Provider value={{outer, setOuter, inner, setInner}}>
-                    <Header />
-                    <Menu />
+                    <MenuContext.Consumer>
+                        {
+                            ({outer}) => (
+                                <div className={outer? styles.menuOpened: ''}>
+                                    <Header />
+                                    <Menu />
+                                    <Routes>
+                                        <Route path={"/"} element={<Home />} />
+                                        <Route path={"/collections"} element={<Collection />} />
+                                        <Route path={"/collections/:id"} element={<Collection />} />
+                                        <Route path={"*"} element={<NotFound />} />
+                                    </Routes>
+                                </div>
+                            )
+                        }
+                    </MenuContext.Consumer>
                 </MenuContext.Provider>
-                <Routes>
-                    <Route path={"/"} element={<Home />} />
-                    <Route path={"/collections"} element={<Collection />} />
-                    <Route path={"/collections/:id"} element={<Collection />} />
-                    <Route path={"*"} element={<NotFound />} />
-                </Routes>
             </QueryClientProvider>
         </Router>
     );

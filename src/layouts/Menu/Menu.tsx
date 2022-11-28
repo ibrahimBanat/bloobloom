@@ -32,7 +32,6 @@ const Menu:FunctionComponent = () => {
                                  }}
                             >
                                 <span className={styles.menuItemLink}>spectacles</span>
-                                <span></span>
                             </div>
                             <div className={styles.menuItem}
                                  onClick={() => {
@@ -61,19 +60,14 @@ const Menu:FunctionComponent = () => {
                                 <span></span>
                                 <span className={styles.menuItemLink}>go back</span>
                             </div>
-                            <div className={styles.menuItem}
+                            <Link className={styles.menuItem}
+                                  to={`collections/${category}-men`}
                             >
-                                <Link to={`collections/${category}-men`}>
                                     <span className={styles.menuItemLink}>men-{category}</span>
-                                </Link>
-                                <span></span>
-                            </div>
-                            <div className={styles.menuItem}>
-                                <Link to={`collections/${category}-women`}>
+                            </Link>
+                                <Link to={`collections/${category}-women`} className={styles.menuItem}>
                                     <span className={styles.menuItemLink}>women-{category}</span>
                                 </Link>
-                                <span></span>
-                            </div>
                         </article>
                     </aside>
                 </>

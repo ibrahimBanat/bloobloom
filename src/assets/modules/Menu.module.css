@@ -56,3 +56,10 @@ a {
 .showInner {
     transform: none;
 }
+@media (max-width: 576px) {
+    .aside {
+        width: 100%;
+        z-index: 9999;
+        overflow: hidden;
+    }
+}

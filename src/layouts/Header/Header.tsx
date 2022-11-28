@@ -16,13 +16,20 @@ const Header = () => {
                                             onMouseEnter={() => setOuter(true)}
                                             onMouseLeave={() => setOuter(false)}
                                             onFocus={() => setOuter(true)}
+                                            onClick={() => {
+                                                setOuter(!outer)
+                                            }}
                                         >
                                             <div className={styles.navLinkBox}>
-                                                <div>
-                                            <span className={styles.menuButton} role={'button'}
-                                            >
-                                                Menu
-                                            </span>
+                                                <div className={styles.menuButton} role={'button'}>
+                                                    <span className={styles.hideDesktop}>
+                                                        {
+                                                            outer?  'X' : 'Menu'
+                                                        }
+                                                    </span>
+                                                    <span className={styles.menuButtonText}>
+                                                        Menu
+                                                    </span>
                                                 </div>
                                             </div>
                                         </li>

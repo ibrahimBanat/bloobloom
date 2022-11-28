@@ -1,16 +1,13 @@
-import {FunctionComponent, useState} from "react";
-import Header from '../Header/Header';
-import Menu from "../Menu/Menu";
-import {MenuContext} from "../../context/MenuContext";
+import {FunctionComponent} from "react";
 import Collection from '../../pages/collection/Collection';
 
 const Layout: FunctionComponent = () => {
 
     return (
         <>
-                <article className={'home'}>
-                    <Collection />
-                </article>
+            <article>
+                <Collection/>
+            </article>
         </>
     )
 }

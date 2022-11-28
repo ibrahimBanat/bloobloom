@@ -72,7 +72,17 @@
     left: 0;
     width: 15%;
     top: 0;
-    cursor: w-resize;}
+    cursor: w-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leftControl:hover, .rightControl:hover {
+    backdrop-filter:blur(10px) ;
+    background: rgba(255,255, 255, 0.1);
+    box-shadow: 0 10px 10px rgb(46 54 68 / 3%)
+
+}
 .rightControl {
     position: absolute;
     height: calc(100% - 40px);
@@ -80,4 +90,17 @@
     width: 15%;
     top: 0;
     cursor: e-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hideDesktop {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .hideDesktop {
+        display: initial;
+    }
 }

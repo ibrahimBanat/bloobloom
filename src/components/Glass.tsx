@@ -10,19 +10,18 @@ const Glass = (props: { glass: GlassItemInterface }) => {
     useEffect(() => {
         setCurrentGlassVariant(glass.glass_variants);
     }, []);
-    return (<div>
+    return (<div key={glass.id + '-' + glass.name}>
                 <div className={styles.leftControl}
                     onClick={() => {
-                        console.log(imgPosition);
-                        console.log(currentGlassVariant[currentIndex]?.media.length);
-                        console.log(imgPosition < currentGlassVariant[currentIndex]?.media.length);
                         if(imgPosition > 0) {
                             return setImgPosition(imgPosition - 1);
                         }
                         return setImgPosition(currentGlassVariant[currentIndex]?.media.length - 1);
                     }}
                 >
-
+                    <span className={styles.hideDesktop}>
+                        &lt;
+                    </span>
                 </div>
                 <div className={styles.header}>
                     <span key={glass.name + '-' + currentIndex}>{glass.name}</span>
@@ -51,7 +50,9 @@ const Glass = (props: { glass: GlassItemInterface }) => {
                     }
                      setImgPosition(0);
                 }}>
-
+                    <span className={styles.hideDesktop}>
+                        &gt;
+                    </span>
                 </div>
         </div>)
 }
